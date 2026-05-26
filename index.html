@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tours & Travels | Simple Customer Form</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="tours and travels, trip request form, travel enquiry" name="keywords">
+    <meta content="A simple tours and travels request form that sends the travel team an automatic SMS notification." name="description">
+
+    <link href="img/favicon.ico" rel="icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        /* Make the main navbar fixed and avoid content hidden behind it */
+        .request-nav.fixed-top {
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1030;
+        }
+        /* add page padding to account for fixed navbar height */
+        body.simple-request-page {
+            padding-top: 86px;
+        }
+        @media (max-width: 767px) {
+            body.simple-request-page { padding-top: 70px; }
+        }
+    </style>
+</head>
+
+<body class="simple-request-page">
+    <div class="container-fluid top-strip py-2 d-none d-lg-block">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-center text-lg-left">
+                    <div class="d-inline-flex align-items-center small text-muted">
+                        <span><i class="fa fa-sms mr-2"></i>+91 98765 43210</span>
+                        <span class="mx-3">|</span>
+                        <span><i class="fa fa-phone-alt mr-2"></i>+012 345 6789</span>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center text-lg-right">
+                    <div class="d-inline-flex align-items-center small text-muted">
+                        <span class="mr-3">Fast reply within business hours</span>
+                        <i class="fa fa-bell text-primary"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid position-relative nav-bar p-0">
+        <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
+            <nav class="navbar navbar-expand-lg navbar-light shadow-sm py-3 py-lg-0 pl-3 pl-lg-4 request-nav fixed-top">
+                <a href="#hero" class="navbar-brand">
+                    <h1 class="m-0"><span>TOURS</span> TRAVELS</h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end px-3" id="navbarCollapse">
+                    <div class="navbar-nav py-0">
+                        <a href="#hero" class="nav-item nav-link active">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="#request-form" class="nav-item nav-link">Request Form</a>
+                        <a href="#how-it-works" class="nav-item nav-link">How it Works</a>
+                        <a href="#contact" class="nav-item nav-link">Contact</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <section id="hero" class="request-hero container-fluid py-5">
+        <div class="container py-4 py-lg-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <span class="request-badge mb-3 d-inline-flex align-items-center">Plan your next trip</span>
+                    <h1 class="display-4 font-weight-bold mb-3">One short form. The travel team gets the enquiry as a text message.</h1>
+                    <p class="lead mb-4">Customers enter their travel details, click send, and the request is delivered automatically to the travel team by SMS.</p>
+                    <div class="d-flex flex-wrap mb-4">
+                        <div class="info-pill mr-3 mb-3"><i class="fa fa-check-circle mr-2"></i>Choose destination</div>
+                        <div class="info-pill mr-3 mb-3"><i class="fa fa-sms mr-2"></i>Travel team gets SMS</div>
+                        <div class="info-pill mb-3"><i class="fa fa-reply mr-2"></i>Quick trip follow-up</div>
+                    </div>
+                    <a href="#request-form" class="btn btn-primary btn-lg px-4 py-3">Enquire Now</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-card">
+                        <img class="img-fluid rounded-lg hero-image" src="img/tropical-heaven-15750871.jpg" alt="Travel destination">
+                        <div class="hero-overlay-card">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fa fa-map-marker-alt text-primary mr-2"></i>
+                                <strong>Popular tours & travel</strong>
+                            </div>
+                                <p class="mb-0">Built for quick tour enquiries with automatic SMS delivery.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="request-form" class="container-fluid py-5">
+        <div class="container py-3">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="request-form-card shadow-lg">
+                        <div class="row no-gutters">
+                            <div class="col-lg-5 request-form-side p-4 p-lg-5">
+                                <h2 class="mb-3">Travel Enquiry Form</h2>
+                                <p class="mb-4">Keep it short and simple. The fields below send the trip request automatically to the travel team by SMS.</p>
+                                <div class="mb-3">
+                                    <div class="small text-uppercase letter-space">What to collect</div>
+                                    <div>Name, phone, destination, and a short trip message.</div>
+                                </div>
+                                <img class="img-fluid rounded-lg" src="img/about-1.jpg" alt="Guide support">
+                            </div>
+                            <div class="col-lg-7 p-4 p-lg-5 bg-white">
+                                <form id="customerRequestForm" action="send_request.php" method="post">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="customerName">Traveler name</label>
+                                            <input type="text" class="form-control request-input" id="customerName" name="customerName" placeholder="Full name" required>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="customerPhone">Contact phone</label>
+                                            <input type="tel" class="form-control request-input" id="customerPhone" name="customerPhone" placeholder="+91 98765 43210" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="travelDate">Preferred travel date</label>
+                                            <input type="date" class="form-control request-input" id="travelDate" name="travelDate" required>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="travelTime">Preferred time</label>
+                                            <input type="time" class="form-control request-input" id="travelTime" name="travelTime" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="tripType">Destination / tour type</label>
+                                            <select class="form-control request-input" id="tripType" name="tripType" required>
+                                                <option value="" selected>Select destination</option>
+                                                <option>Beach holiday</option>
+                                                <option>Mountain adventure</option>
+                                                <option>City sightseeing</option>
+                                                <option>Custom itinerary</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="guests">Travelers</label>
+                                            <input type="number" min="1" class="form-control request-input" id="guests" name="guests" placeholder="2" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="customerMessage">Trip message</label>
+                                        <textarea class="form-control request-input" id="customerMessage" name="customerMessage" rows="4" placeholder="Tell us where you want to go and what you need" required></textarea>
+                                    </div>
+                                    <div class="d-flex flex-wrap align-items-center justify-content-between">
+                                        <p id="requestStatus" class="mb-3 mb-md-0 request-status">Submitting sends the enquiry directly to the travel team by SMS.</p>
+                                        <button type="submit" class="btn btn-primary btn-lg px-4">Send SMS</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="container-fluid py-5">
+        <div class="container py-3">
+            <div class="section-heading text-center mb-5">
+                <span class="request-badge">How it works</span>
+                <h2 class="mt-3 mb-0">Simple flow for the traveler and the travel team</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="step-card h-100 p-4">
+                        <div class="step-icon mb-3"><i class="fa fa-pen"></i></div>
+                        <h5>1. Choose the trip</h5>
+                        <p class="mb-0">The traveler enters contact details, destination, and a short trip message.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="step-card h-100 p-4">
+                        <div class="step-icon mb-3"><i class="fa fa-bell"></i></div>
+                        <h5>2. Team gets notified</h5>
+                        <p class="mb-0">The site sends the enquiry directly to the travel team by SMS.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="step-card h-100 p-4">
+                        <div class="step-icon mb-3"><i class="fa fa-comments"></i></div>
+                        <h5>3. Trip follow-up</h5>
+                        <p class="mb-0">The travel team replies by email or phone with the next steps.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid py-5">
+        <div class="container py-3">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="photo-card h-100">
+                        <img class="img-fluid" src="img/about.jpg" alt="Support example">
+                        <div class="p-4">
+                            <h5 class="mb-2">Travel support</h5>
+                            <p class="mb-0">A clean layout for quick travel support without extra sections.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="photo-card h-100">
+                        <img class="img-fluid" src="img/pexels-photo-457882.jpeg" alt="Landscape example">
+                        <div class="p-4">
+                            <h5 class="mb-2">Use the pictures</h5>
+                            <p class="mb-0">Existing template photos are reused so the project stays visual and travel-focused.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <div class="photo-card h-100">
+                        <img class="img-fluid" src="img/team-1.jpg" alt="Guide example">
+                        <div class="p-4">
+                            <h5 class="mb-2">Travel contact</h5>
+                            <p class="mb-0">Set the travel phone in one place so customers know where the enquiry goes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="container-fluid footer-simple py-5 mt-4">
+        <div class="container py-3">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h3 class="mb-2">Tours & Travels</h3>
+                    <p class="mb-0">A simple form for travelers to send their details and enquiry to the team quickly.</p>
+                </div>
+                <div class="col-lg-6 text-lg-right">
+                    <div class="mb-2"><i class="fa fa-sms mr-2"></i>+91 98765 43210</div>
+                    <div><i class="fa fa-phone-alt mr-2"></i>+012 345 6789</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#hero" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
