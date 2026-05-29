@@ -3,14 +3,15 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Tours & Travels | Simple Customer Form</title>
+    <title>Parmar Tour and Travels | Cab Services & Tour Packages</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="tours and travels, trip request form, travel enquiry" name="keywords">
-    <meta content="A simple tours and travels request form that sends the travel team an automatic SMS notification." name="description">
+    <meta content="Parmar Tour and Travels, cab services, tour packages, Himachal Pradesh, Punjab, Haryana, Rajasthan" name="keywords">
+    <meta content="Parmar Tour and Travels offers quality cab services and tour packages across Himachal Pradesh, Punjab, Haryana, J&K, Rajasthan and Chandigarh with AC/Non-AC vehicles. Book your journey today!" name="description">
 
     <link href="img/favicon.ico" rel="icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <style>
@@ -29,6 +30,197 @@
         @media (max-width: 767px) {
             body.simple-request-page { padding-top: 70px; }
         }
+
+        /* Uniform Image Sizing & Carousel Styles */
+        .carousel-image-container {
+            overflow: hidden;
+            background: #f8f9fa;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .carousel-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .carousel-image-container:hover img {
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 768px) {
+            .carousel-image-container img {
+                height: 100%;
+            }
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .photo-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-image {
+            height: 400px;
+            object-fit: cover;
+        }
+
+        /* Carousel Navigation Styling */
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.8;
+        }
+
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+            opacity: 1;
+        }
+
+        .carousel-control-prev {
+            left: 20px;
+        }
+
+        .carousel-control-next {
+            right: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-control-prev,
+            .carousel-control-next {
+                width: 40px;
+                height: 40px;
+                font-size: 12px;
+            }
+            .carousel-control-prev {
+                left: 10px;
+            }
+            .carousel-control-next {
+                right: 10px;
+            }
+        }
+
+        .carousel-indicators {
+            bottom: 15px;
+            margin-bottom: 0;
+        }
+
+        .carousel-indicators li {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.6);
+            border: none;
+            cursor: pointer;
+        }
+
+        .carousel-indicators li.active {
+            background-color: #007bff;
+        }
+
+        /* Service Section Styling */
+        .service-card-container {
+            margin-bottom: 60px;
+        }
+
+        .service-title-card {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .service-description {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-description h5 {
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .service-description p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .service-description ul {
+            padding-left: 20px;
+        }
+
+        .service-description ul li {
+            margin-bottom: 8px;
+            color: #666;
+        }
+
+        .service-description ul li:before {
+            content: "✓ ";
+            color: #007bff;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Equal Height Columns — left carousel stretches to match right column */
+        #services-section > .container > .row {
+            display: flex;
+            align-items: stretch;
+        }
+
+        #services-section .left-service-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #services-section .left-service-col > .service-card-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0;
+        }
+
+        #services-section .left-service-col .carousel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #services-section .left-service-col .carousel-inner {
+            flex: 1;
+            height: 100%;
+            min-height: 420px;
+        }
+
+        #services-section .left-service-col .carousel-item {
+            height: 100%;
+        }
+
+        #services-section .left-service-col .carousel-image-container {
+            height: 100% !important;
+        }
     </style>
 </head>
 
@@ -38,14 +230,14 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 text-center text-lg-left">
                     <div class="d-inline-flex align-items-center small text-muted">
-                        <span><i class="fa fa-sms mr-2"></i>+91 98765 43210</span>
+                        <span><i class="fa fa-sms mr-2"></i>+919872037571</span>
                         <span class="mx-3">|</span>
-                        <span><i class="fa fa-phone-alt mr-2"></i>+012 345 6789</span>
+                        <span><i class="fa fa-map-marker-alt mr-2"></i>Talwara Chowk, Mukerian</span>
                     </div>
                 </div>
                 <div class="col-lg-6 text-center text-lg-right">
                     <div class="d-inline-flex align-items-center small text-muted">
-                        <span class="mr-3">Fast reply within business hours</span>
+                        <span class="mr-3">Instant SMS Notification</span>
                         <i class="fa fa-bell text-primary"></i>
                     </div>
                 </div>
@@ -57,7 +249,7 @@
         <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
             <nav class="navbar navbar-expand-lg navbar-light shadow-sm py-3 py-lg-0 pl-3 pl-lg-4 request-nav fixed-top">
                 <a href="#hero" class="navbar-brand">
-                    <h1 class="m-0"><span>TOURS</span> TRAVELS</h1>
+                    <h1 class="m-0"><span>PARMAR TOURS</span> & TRAVELS</h1>
                 </a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -65,9 +257,8 @@
                 <div class="collapse navbar-collapse justify-content-end px-3" id="navbarCollapse">
                     <div class="navbar-nav py-0">
                         <a href="#hero" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="#about" class="nav-item nav-link">About</a>
                         <a href="#request-form" class="nav-item nav-link">Request Form</a>
-                        <a href="#how-it-works" class="nav-item nav-link">How it Works</a>
                         <a href="#contact" class="nav-item nav-link">Contact</a>
                     </div>
                 </div>
@@ -79,27 +270,74 @@
         <div class="container py-4 py-lg-5">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-5 mb-lg-0">
-                    <span class="request-badge mb-3 d-inline-flex align-items-center">Plan your next trip</span>
-                    <h1 class="display-4 font-weight-bold mb-3">One short form. The travel team gets the enquiry as a text message.</h1>
-                    <p class="lead mb-4">Customers enter their travel details, click send, and the request is delivered automatically to the travel team by SMS.</p>
+                    <span class="request-badge mb-3 d-inline-flex align-items-center">Quality Cab Services & Tour Packages</span>
+                    <h1 class="display-4 font-weight-bold mb-3">Book Your Journey. Instant Notification to Our Team.</h1>
+                    <p class="lead mb-4">Premium cab services with flexible seating (4-17 persons). AC & Non-AC options. Fixed package rates. Direct SMS notification to our team for instant response.</p>
                     <div class="d-flex flex-wrap mb-4">
-                        <div class="info-pill mr-3 mb-3"><i class="fa fa-check-circle mr-2"></i>Choose destination</div>
-                        <div class="info-pill mr-3 mb-3"><i class="fa fa-sms mr-2"></i>Travel team gets SMS</div>
-                        <div class="info-pill mb-3"><i class="fa fa-reply mr-2"></i>Quick trip follow-up</div>
+                        <div class="info-pill mr-3 mb-3"><i class="fa fa-check-circle mr-2"></i>Fixed Rates</div>
+                        <div class="info-pill mr-3 mb-3"><i class="fa fa-sms mr-2"></i>Instant SMS</div>
+                        <div class="info-pill mb-3"><i class="fa fa-van-shuttle mr-2"></i>Quality Cabs</div>
                     </div>
                     <a href="#request-form" class="btn btn-primary btn-lg px-4 py-3">Enquire Now</a>
                 </div>
                 <div class="col-lg-6">
                     <div class="hero-card">
-                        <img class="img-fluid rounded-lg hero-image" src="img/tropical-heaven-15750871.jpg" alt="Travel destination">
+                        <div class="carousel-image-container" style="height: 450px; border-radius: 10px;">
+                            <img class="img-fluid rounded-lg hero-image" src="img/cars/car 1.jpeg" alt="Parmar Tour and Travels - Premium Cab Service" style="border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                        </div>
                         <div class="hero-overlay-card">
                             <div class="d-flex align-items-center mb-2">
                                 <i class="fa fa-map-marker-alt text-primary mr-2"></i>
-                                <strong>Popular tours & travel</strong>
+                                <strong>Parmar Tour and Travels</strong>
                             </div>
-                                <p class="mb-0">Built for quick tour enquiries with automatic SMS delivery.</p>
+                            <p class="mb-0">Professional cab services across 6 states with fixed packages & rates.</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="container-fluid py-5 bg-light">
+        <div class="container py-3">
+            <div class="section-heading text-center mb-5">
+                <span class="request-badge">About Parmar Tour and Travels</span>
+                <h2 class="mt-3 mb-0">Your Trusted Travel Partner</h2>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="carousel-image-container" style="height: 400px;">
+                        <img class="img-fluid rounded-lg" src="img/destinations/Himachal Pradesh 1.jpg" alt="Himachal Pradesh - Mountain Beauty" style="height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6 pl-lg-4">
+                    <h3 class="mb-3">Premium Cab Services & Tour Packages</h3>
+                    <p class="mb-3">Parmar Tour and Travels is your trusted partner for quality transportation and tour packages across Northern India. We offer professional cab services with flexible options for your travel needs.</p>
+                    <p class="mb-4">With years of experience, we provide reliable, comfortable, and affordable travel solutions across Himachal Pradesh, Punjab, Haryana, Jammu & Kashmir, Rajasthan, and Chandigarh.</p>
+                    <div class="mb-4">
+                        <div class="d-flex mb-3">
+                            <i class="fa fa-check-circle text-primary mr-3 mt-1"></i>
+                            <div>
+                                <h6 class="mb-1">AC & Non-AC Vehicles</h6>
+                                <p class="mb-0 small text-muted">Flexible options for all budgets and preferences</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <i class="fa fa-check-circle text-primary mr-3 mt-1"></i>
+                            <div>
+                                <h6 class="mb-1">Fixed Package Rates</h6>
+                                <p class="mb-0 small text-muted">Transparent pricing with no hidden charges</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <i class="fa fa-check-circle text-primary mr-3 mt-1"></i>
+                            <div>
+                                <h6 class="mb-1">Instant Notifications</h6>
+                                <p class="mb-0 small text-muted">Immediate SMS notification for all enquiries</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#request-form" class="btn btn-primary btn-lg px-4">Get Started</a>
                 </div>
             </div>
         </div>
@@ -112,13 +350,15 @@
                     <div class="request-form-card shadow-lg">
                         <div class="row no-gutters">
                             <div class="col-lg-5 request-form-side p-4 p-lg-5">
-                                <h2 class="mb-3">Travel Enquiry Form</h2>
-                                <p class="mb-4">Keep it short and simple. The fields below send the trip request automatically to the travel team by SMS.</p>
+                                <h2 class="mb-3">Book Your Journey</h2>
+                                <p class="mb-4">Submit your travel details and our team will respond instantly via SMS with options and rates.</p>
                                 <div class="mb-3">
-                                    <div class="small text-uppercase letter-space">What to collect</div>
-                                    <div>Name, phone, destination, and a short trip message.</div>
+                                    <div class="small text-uppercase letter-space">Required Information</div>
+                                    <div>Your name, phone, travel destination, date & number of travelers.</div>
                                 </div>
-                                <img class="img-fluid rounded-lg" src="img/about-1.jpg" alt="Guide support">
+                                <div class="carousel-image-container" style="height: 300px;">
+                                    <img class="img-fluid rounded-lg" src="img/destinations/Punjab 1.jpg" alt="Book Your Journey with Parmar Travels" style="height: 100%; object-fit: cover;">
+                                </div>
                             </div>
                             <div class="col-lg-7 p-4 p-lg-5 bg-white">
                                 <form id="customerRequestForm" action="send_request.php" method="post">
@@ -144,26 +384,44 @@
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
-                                            <label for="tripType">Destination / tour type</label>
+                                            <label for="tripType">Destination</label>
                                             <select class="form-control request-input" id="tripType" name="tripType" required>
                                                 <option value="" selected>Select destination</option>
-                                                <option>Beach holiday</option>
-                                                <option>Mountain adventure</option>
-                                                <option>City sightseeing</option>
-                                                <option>Custom itinerary</option>
+                                                <option>Himachal Pradesh</option>
+                                                <option>Punjab</option>
+                                                <option>Haryana</option>
+                                                <option>Jammu & Kashmir</option>
+                                                <option>Rajasthan</option>
+                                                <option>Chandigarh</option>
+                                                <option>Other</option>
                                             </select>
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label for="guests">Travelers</label>
-                                            <input type="number" min="1" class="form-control request-input" id="guests" name="guests" placeholder="2" required>
+                                            <label for="guests">Number of Travelers</label>
+                                            <input type="number" min="1" max="17" class="form-control request-input" id="guests" name="guests" placeholder="4" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="cabType">Cab Preference</label>
+                                            <select class="form-control request-input" id="cabType" name="cabType" required>
+                                                <option value="" selected>Select cab type</option>
+                                                <option>AC Vehicle</option>
+                                                <option>Non-AC Vehicle</option>
+                                                <option>No Preference</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="luggage">Luggage (kg)</label>
+                                            <input type="number" max="100" class="form-control request-input" id="luggage" name="luggage" placeholder="Max 100kg" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="customerMessage">Trip message</label>
-                                        <textarea class="form-control request-input" id="customerMessage" name="customerMessage" rows="4" placeholder="Tell us where you want to go and what you need" required></textarea>
+                                        <label for="customerMessage">Additional Information</label>
+                                        <textarea class="form-control request-input" id="customerMessage" name="customerMessage" rows="4" placeholder="Special requests, package preferences, or any other details" required></textarea>
                                     </div>
                                     <div class="d-flex flex-wrap align-items-center justify-content-between">
-                                        <p id="requestStatus" class="mb-3 mb-md-0 request-status">Submitting sends the enquiry directly to the travel team by SMS.</p>
+                                        <p id="requestStatus" class="mb-3 mb-md-0 request-status">Instant SMS notification sent to +919872037571</p>
                                         <button type="submit" class="btn btn-primary btn-lg px-4">Send SMS</button>
                                     </div>
                                 </form>
@@ -175,65 +433,157 @@
         </div>
     </section>
 
-    <section id="how-it-works" class="container-fluid py-5">
+    <section id="services-section" class="container-fluid py-5">
         <div class="container py-3">
-            <div class="section-heading text-center mb-5">
-                <span class="request-badge">How it works</span>
-                <h2 class="mt-3 mb-0">Simple flow for the traveler and the travel team</h2>
-            </div>
             <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="step-card h-100 p-4">
-                        <div class="step-icon mb-3"><i class="fa fa-pen"></i></div>
-                        <h5>1. Choose the trip</h5>
-                        <p class="mb-0">The traveler enters contact details, destination, and a short trip message.</p>
+                <!-- Left Column: Quality Vehicles Carousel -->
+                <div class="col-lg-6 mb-4 mb-lg-0 left-service-col">
+                    <div class="service-card-container">
+                        <div class="service-title-card">
+                            <h3 class="mb-2"><i class="fa fa-car mr-2"></i>Quality Vehicles</h3>
+                            <p class="text-muted">Well-maintained AC & Non-AC cabs with seating capacity of 4 to 17 persons</p>
+                        </div>
+                        <div id="qualityVehiclesCarousel" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="carousel-image-container">
+                                        <img src="img/cars/car 1.jpeg" alt="Quality Vehicle 1">
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-image-container">
+                                        <img src="img/cars/car 2.jpeg" alt="Quality Vehicle 2">
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-image-container">
+                                        <img src="img/cars/car 3.jpeg" alt="Quality Vehicle 3">
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-image-container">
+                                        <img src="img/cars/car 4.jpeg" alt="Quality Vehicle 4">
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-image-container">
+                                        <img src="img/cars/car 5.jpeg" alt="Quality Vehicle 5">
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-image-container">
+                                        <img src="img/cars/car 6.jpeg" alt="Quality Vehicle 6">
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-image-container">
+                                        <img src="img/cars/car 7.jpeg" alt="Quality Vehicle 7">
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#qualityVehiclesCarousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#qualityVehiclesCarousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                            <ol class="carousel-indicators">
+                                <li data-target="#qualityVehiclesCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#qualityVehiclesCarousel" data-slide-to="1"></li>
+                                <li data-target="#qualityVehiclesCarousel" data-slide-to="2"></li>
+                                <li data-target="#qualityVehiclesCarousel" data-slide-to="3"></li>
+                                <li data-target="#qualityVehiclesCarousel" data-slide-to="4"></li>
+                                <li data-target="#qualityVehiclesCarousel" data-slide-to="5"></li>
+                                <li data-target="#qualityVehiclesCarousel" data-slide-to="6"></li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="step-card h-100 p-4">
-                        <div class="step-icon mb-3"><i class="fa fa-bell"></i></div>
-                        <h5>2. Team gets notified</h5>
-                        <p class="mb-0">The site sends the enquiry directly to the travel team by SMS.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="step-card h-100 p-4">
-                        <div class="step-icon mb-3"><i class="fa fa-comments"></i></div>
-                        <h5>3. Trip follow-up</h5>
-                        <p class="mb-0">The travel team replies by email or phone with the next steps.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="container-fluid py-5">
-        <div class="container py-3">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="photo-card h-100">
-                        <img class="img-fluid" src="img/about.jpg" alt="Support example">
-                        <div class="p-4">
-                            <h5 class="mb-2">Travel support</h5>
-                            <p class="mb-0">A clean layout for quick travel support without extra sections.</p>
+                <!-- Right Column: Wide Coverage + Fixed Rates -->
+                <div class="col-lg-6">
+                    <!-- Wide Coverage Carousel Section -->
+                    <div class="service-card-container mb-4">
+                        <div class="service-title-card">
+                            <h3 class="mb-2"><i class="fa fa-map-marker-alt mr-2"></i>Wide Coverage</h3>
+                            <p class="text-muted">Service across Himachal Pradesh, Punjab, Haryana, J&K, Rajasthan & Chandigarh</p>
+                        </div>
+                        <div id="wideCoverageCarousel" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="carousel-image-container" style="height: 280px;">
+                                        <img src="img/destinations/JK 1.jpg" alt="Jammu & Kashmir 1">
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-image-container" style="height: 280px;">
+                                        <img src="img/destinations/JK 2.jpg" alt="Jammu & Kashmir 2">
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-image-container" style="height: 280px;">
+                                        <img src="img/destinations/JK 3.jpg" alt="Jammu & Kashmir 3">
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-image-container" style="height: 280px;">
+                                        <img src="img/destinations/JK 4.jpg" alt="Jammu & Kashmir 4">
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-image-container" style="height: 280px;">
+                                        <img src="img/destinations/JK 5.jpg" alt="Jammu & Kashmir 5">
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-image-container" style="height: 280px;">
+                                        <img src="img/destinations/JK 6.jpg" alt="Jammu & Kashmir 6">
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-image-container" style="height: 280px;">
+                                        <img src="img/destinations/JK 7.jpg" alt="Jammu & Kashmir 7">
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#wideCoverageCarousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#wideCoverageCarousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                            <ol class="carousel-indicators">
+                                <li data-target="#wideCoverageCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#wideCoverageCarousel" data-slide-to="1"></li>
+                                <li data-target="#wideCoverageCarousel" data-slide-to="2"></li>
+                                <li data-target="#wideCoverageCarousel" data-slide-to="3"></li>
+                                <li data-target="#wideCoverageCarousel" data-slide-to="4"></li>
+                                <li data-target="#wideCoverageCarousel" data-slide-to="5"></li>
+                                <li data-target="#wideCoverageCarousel" data-slide-to="6"></li>
+                            </ol>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="photo-card h-100">
-                        <img class="img-fluid" src="img/pexels-photo-457882.jpeg" alt="Landscape example">
-                        <div class="p-4">
-                            <h5 class="mb-2">Use the pictures</h5>
-                            <p class="mb-0">Existing template photos are reused so the project stays visual and travel-focused.</p>
+
+                    <!-- Fixed Package Rates Text Section -->
+                    <div class="service-card-container">
+                        <div class="service-title-card">
+                            <h3 class="mb-2"><i class="fa fa-tags mr-2"></i>Fixed Package Rates</h3>
+                            <p class="text-muted">Special services & packages with transparent, fixed pricing for all routes</p>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12 mb-4">
-                    <div class="photo-card h-100">
-                        <img class="img-fluid" src="img/team-1.jpg" alt="Guide example">
-                        <div class="p-4">
-                            <h5 class="mb-2">Travel contact</h5>
-                            <p class="mb-0">Set the travel phone in one place so customers know where the enquiry goes.</p>
+                        <div class="service-description p-5" style="background: #fff; border: 2px solid #007bff; border-radius: 10px;">
+                            <h5 style="font-size: 1.3rem; color: #333; margin-bottom: 10px;">Our Pricing Philosophy</h5>
+                            <p style="font-size: 0.95rem; color: #666; margin-bottom: 20px;">We believe in complete transparency. No hidden charges, no surprises.</p>
+                            <ul class="mb-0" style="font-size: 0.95rem;">
+                                <li style="margin-bottom: 12px; color: #555;"><strong>Fixed Rate Packages</strong> for all major destinations</li>
+                                <li style="margin-bottom: 12px; color: #555;"><strong>AC & Non-AC Options</strong> at different price points</li>
+                                <li style="margin-bottom: 12px; color: #555;"><strong>Group Discounts</strong> for bulk bookings</li>
+                                <li style="margin-bottom: 12px; color: #555;"><strong>All-Inclusive Packages</strong> covering fuel, toll, parking</li>
+                                <li style="color: #555;"><strong>Instant SMS Quote</strong> - Book and get prices immediately</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -245,12 +595,14 @@
         <div class="container py-3">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
-                    <h3 class="mb-2">Tours & Travels</h3>
-                    <p class="mb-0">A simple form for travelers to send their details and enquiry to the team quickly.</p>
+                    <h3 class="mb-2">Parmar Tour and Travels</h3>
+                    <p class="mb-2"><strong>Owner: Rajbir Singh</strong></p>
+                    <p class="mb-0">Premium cab services and tour packages across Northern India with fixed rates, quality vehicles, and instant SMS notifications.</p>
                 </div>
                 <div class="col-lg-6 text-lg-right">
-                    <div class="mb-2"><i class="fa fa-sms mr-2"></i>+91 98765 43210</div>
-                    <div><i class="fa fa-phone-alt mr-2"></i>+012 345 6789</div>
+                    <div class="mb-2"><i class="fa fa-phone-alt mr-2"></i><a href="tel:+919872037571" style="color: inherit;">+91 9872037571</a></div>
+                    <div class="mb-2"><i class="fa fa-envelope mr-2"></i><a href="mailto:Rajbirparmar9@gmail.com" style="color: inherit;">Rajbirparmar9@gmail.com</a></div>
+                    <div><i class="fa fa-map-marker-alt mr-2"></i>Talwara Chowk, Mukerian</div>
                 </div>
             </div>
         </div>
@@ -258,6 +610,10 @@
 
     <a href="#hero" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
+    <!-- Bootstrap JS and dependencies for carousel functionality -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 
