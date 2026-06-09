@@ -168,7 +168,23 @@
                     console.error("Email notification failed, but continuing to WhatsApp", err);
                 }
 
-                // --- 2. WHATSAPP REDIRECT ---
+                // --- 2. AUTOMATED WHATSAPP NOTIFICATION (CallMeBot - Free) ---
+                // Get your free API Key from: https://www.callmebot.com/blog/free-api-whatsapp-messages/
+                // Send a WhatsApp message to +34 644 48 53 60 with the text: "I allow callmebot to send me messages"
+                var callMeBotApiKey = "YOUR_CALLMEBOT_API_KEY_HERE"; 
+                var callMeBotPhone = "+919872037571"; // Must include the plus sign
+                
+                if (callMeBotApiKey !== "YOUR_CALLMEBOT_API_KEY_HERE") {
+                    var callMeBotUrl = `https://api.callmebot.com/whatsapp.php?phone=${encodeURIComponent(callMeBotPhone)}&text=${encodeURIComponent(text)}&apikey=${callMeBotApiKey}`;
+                    try {
+                        // We use mode: 'no-cors' because CallMeBot is a simple webhook endpoint
+                        fetch(callMeBotUrl, { mode: 'no-cors' });
+                    } catch(err) {
+                        console.error("Automated WhatsApp notification failed", err);
+                    }
+                }
+
+                // --- 3. WHATSAPP REDIRECT (For the Customer) ---
                 // Replace with the actual business WhatsApp number (country code + number without plus sign)
                 var whatsappNumber = "919872037571"; 
                 var whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
