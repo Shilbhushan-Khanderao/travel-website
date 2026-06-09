@@ -124,45 +124,64 @@
                     return;
                 }
 
+                submitButton.textContent = 'Preparing...';
                 submitButton.disabled = true;
-                submitButton.textContent = 'Sending...';
 
                 if (requestStatus) {
-                    requestStatus.textContent = 'Sending the request to the guide.';
+                    requestStatus.textContent = 'Connecting securely to WhatsApp...';
                 }
 
+                var formData = new FormData(requestForm);
+                
+                var name = formData.get('customerName') || '';
+                var phone = formData.get('customerPhone') || '';
+                var date = formData.get('travelDate') || '';
+                var time = formData.get('travelTime') || '';
+                var destination = formData.get('tripType') || '';
+                var guests = formData.get('guests') || '';
+                var cabType = formData.get('cabType') || '';
+                var luggage = formData.get('luggage') || '';
+                var message = formData.get('customerMessage') || '';
+
+                var text = `*New Travel Enquiry*\n\n` +
+                           `*Name:* ${name}\n` +
+                           `*Phone:* ${phone}\n` +
+                           `*Date:* ${date}\n` +
+                           `*Time:* ${time}\n` +
+                           `*Destination:* ${destination}\n` +
+                           `*Travelers:* ${guests}\n` +
+                           `*Cab Preference:* ${cabType}\n` +
+                           `*Luggage:* ${luggage} kg\n` +
+                           `*Message:* ${message}`;
+
+                // --- 1. SEND EMAIL NOTIFICATION (Using Web3Forms - Free) ---
+                // You need to get a free Access Key from https://web3forms.com and paste it below
+                formData.append("access_key", "YOUR_WEB3FORMS_ACCESS_KEY_HERE");
+                formData.append("subject", "New Travel Enquiry from " + name);
+                
                 try {
-                    var response = await fetch(requestForm.action, {
-                        method: 'POST',
-                        body: new FormData(requestForm),
-                        headers: {
-                            Accept: 'application/json'
-                        }
+                    await fetch("https://api.web3forms.com/submit", {
+                        method: "POST",
+                        body: formData
                     });
+                } catch(err) {
+                    console.error("Email notification failed, but continuing to WhatsApp", err);
+                }
 
-                    var payload = null;
+                // --- 2. WHATSAPP REDIRECT ---
+                // Replace with the actual business WhatsApp number (country code + number without plus sign)
+                var whatsappNumber = "919872037571"; 
+                var whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
 
-                    try {
-                        payload = await response.json();
-                    } catch (parseError) {
-                        payload = null;
-                    }
-
-                    if (response.ok && payload && payload.success) {
-                        if (requestStatus) {
-                            requestStatus.textContent = payload.message || 'Request sent successfully.';
-                        }
-                        requestForm.reset();
-                    } else if (requestStatus) {
-                        requestStatus.textContent = (payload && payload.message) ? payload.message : 'Unable to send the request.';
-                    }
-                } catch (error) {
-                    if (requestStatus) {
-                        requestStatus.textContent = 'Unable to send the request right now. Please try again later.';
-                    }
-                } finally {
-                    submitButton.disabled = false;
-                    submitButton.textContent = 'Send request';
+                // Open WhatsApp in a new tab
+                window.open(whatsappUrl, '_blank');
+                
+                // --- 3. RESET FORM ---
+                submitButton.innerHTML = '<i class="fab fa-whatsapp mr-2"></i>Get Quote via WhatsApp';
+                submitButton.disabled = false;
+                requestForm.reset();
+                if (requestStatus) {
+                    requestStatus.innerHTML = '<strong class="text-success"><i class="fa fa-check-circle mr-1"></i> Ready! Please press send in WhatsApp.</strong>';
                 }
             });
         }
